@@ -1,7 +1,7 @@
 <script lang="ts">
   import Carousel from "./components/carousel/Carousel.svelte";
-  import Reveal from './components/reveal/index.svelte';
-  import Button from './components/button/index.svelte';
+  import Reveal from './components/Reveal.svelte';
+  import Button from './components/Button.svelte';
 </script>
 
 <main>
