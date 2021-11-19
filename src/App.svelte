@@ -1,10 +1,10 @@
 <script lang="ts">
   import Carousel from "./components/carousel/Carousel.svelte";
-  import ScrollReveal from './components/Reveal/index.svelte';
+  import Reveal from './components/Reveal/index.svelte';
 </script>
 
 <main>
-  <ScrollReveal />
+  <Reveal />
   <section class="carousel">
     <p class="slogon left-slogon reveal reveal-from-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, aut cum. Amet ut dignissimos optio incidunt debitis ipsam omnis ullam nesciunt, recusandae eius quisquam quis perspiciatis aut quae fuga? Sit.</p>
     <p class="slogon right-slogon reveal reveal-from-right">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, aut cum. Amet ut dignissimos optio incidunt debitis ipsam omnis ullam nesciunt, recusandae eius quisquam quis perspiciatis aut quae fuga? Sit.</p>
