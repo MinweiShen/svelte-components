@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Nav from './Nav.svelte'
   import type { ImageProps } from './types'
   import p1 from '../../assets/p1.jpg'
   import p2 from '../../assets/p2.jpg'
@@ -18,11 +19,8 @@
   {#each images as image, i}
     <img class={i === current ? '' : 'hidden'} src={typeof image === 'string' ? image : image.url} alt={typeof image === 'string' ? `carousel ${i}` : image.alt}>
   {/each}
-  <div class="navs">
-    {#each images as _, i}
-      <div class="nav" on:click={() => clickNav(i)}></div>
-    {/each}
-  </div>
+  
+  <Nav count={images.length} onClick={clickNav} />
 </div>
 
 <style>
@@ -32,27 +30,6 @@
     position: relative;
     text-align: center;
     overflow: hidden;
-  }
-
-  .navs {
-    position: absolute;
-    display: flex;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .nav {
-    cursor: pointer;
-    margin: 10px;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background-color: #ccc;
-  }
-
-  .nav:hover {
-    background-color: #aaa;
   }
 
   img {
