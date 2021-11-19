@@ -24,7 +24,7 @@
     <img class={i === current ? '' : 'hidden'} src={isString(image) ? image : image.url} alt={isString(image) ? `carousel ${i}` : image.alt}>
   {/each}
   
-  <Nav count={images.length} onClick={clickNav} />
+  <Nav count={images.length} active={current} onClick={clickNav} />
 </div>
 
 <style>
