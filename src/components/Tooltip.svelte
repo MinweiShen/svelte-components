@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { fadeInt, fadeOut } from '../utils/transition'
   export let content = 'This is a tooltip'
   let element: HTMLDivElement | undefined;
   let timer;
@@ -19,38 +20,13 @@
     return tooltip;
   }
 
-  function fadeOut() {
-    let opacity = 1;
-    const t = setInterval(function() {
-      opacity -= 0.1;
-      opacity = Math.max(0, opacity);
-      document.getElementById('tooltip').style.opacity = opacity + '';
-      if (opacity <= 0) {
-        clearInterval(t);
-      }
-    }, 30);
-  }
-
-  function fadeInt() {
-    let opacity = 0;
-    const t = setInterval(function() {
-      opacity += 0.1;
-      opacity = Math.min(1, opacity);
-      document.getElementById('tooltip').style.opacity = opacity + '';
-      if (opacity >= 1) {
-        clearInterval(t);
-      }
-    }, 30);
-    return t;
-  }
-
   function mouseEnter() {
     positionTooltip(element);
-    timer = fadeInt();
+    timer = fadeInt(document.getElementById('tooltip'));
   }
 
   function mouseLeave() {
-    fadeOut();
+    fadeOut(document.getElementById('tooltip'));
     if (timer) {
       clearInterval(timer);
     }
