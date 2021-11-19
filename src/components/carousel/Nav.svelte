@@ -6,7 +6,7 @@
 
 <div class="navs">
   {#each Array(count).fill(0).map((_, idx) => idx) as i}
-    <div class="nav" on:click={() => onClick(i)}></div>
+    <div class="nav" on:click|stopPropagation={() => onClick(i)}></div>
   {/each}
 </div>
 

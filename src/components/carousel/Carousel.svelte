@@ -11,13 +11,17 @@
   function clickNav(i) {
     current = i
   }
+
+  function isString(p: any): p is string {
+    return typeof p === 'string';
+  }
 </script>
 
 
 
 <div class="carousel">
   {#each images as image, i}
-    <img class={i === current ? '' : 'hidden'} src={typeof image === 'string' ? image : image.url} alt={typeof image === 'string' ? `carousel ${i}` : image.alt}>
+    <img class={i === current ? '' : 'hidden'} src={isString(image) ? image : image.url} alt={isString(image) ? `carousel ${i}` : image.alt}>
   {/each}
   
   <Nav count={images.length} onClick={clickNav} />

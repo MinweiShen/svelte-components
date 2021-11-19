@@ -1,6 +1,6 @@
 <script lang="ts">
   import { throttle } from 'lodash'
-  export let trigger = 'click';
+  export let trigger: 'click' | 'scroll' = 'click';
 
   function reveal() {
     const elements = document.getElementsByClassName('reveal');
@@ -12,14 +12,11 @@
 
   function clickReveal() {
     if (trigger !== 'click') return;
-    console.log('click');
     reveal();
   }
 
   function scrollReveal() {
     if (trigger !== 'scroll') return;
-
-    console.log('scroll');
     reveal();
   }
 </script>
