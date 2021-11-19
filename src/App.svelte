@@ -2,13 +2,14 @@
   import Carousel from "./components/carousel/Carousel.svelte";
   import Reveal from './components/Reveal.svelte';
   import Button from './components/Button.svelte';
+  import Tooltip from './components/Tooltip.svelte';
 </script>
 
 <main>
   <Reveal />
   <section class="carousel">
     <p class="slogon left-slogon reveal reveal-from-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, aut cum. Amet ut dignissimos optio incidunt debitis ipsam omnis ullam nesciunt, recusandae eius quisquam quis perspiciatis aut quae fuga? Sit.
-    <Button primary hoverAnimation>Subscribe</Button>
+    <Tooltip><Button primary>Subscribe</Button></Tooltip>
     </p>
     <p class="slogon right-slogon reveal reveal-from-right">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, aut cum. Amet ut dignissimos optio incidunt debitis ipsam omnis ullam nesciunt, recusandae eius quisquam quis perspiciatis aut quae fuga? Sit.</p>
     <Carousel />
