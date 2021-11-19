@@ -1,12 +1,15 @@
 <script lang="ts">
   import Carousel from "./components/carousel/Carousel.svelte";
-  import Reveal from './components/Reveal/index.svelte';
+  import Reveal from './components/reveal/index.svelte';
+  import Button from './components/button/index.svelte';
 </script>
 
 <main>
   <Reveal />
   <section class="carousel">
-    <p class="slogon left-slogon reveal reveal-from-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, aut cum. Amet ut dignissimos optio incidunt debitis ipsam omnis ullam nesciunt, recusandae eius quisquam quis perspiciatis aut quae fuga? Sit.</p>
+    <p class="slogon left-slogon reveal reveal-from-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, aut cum. Amet ut dignissimos optio incidunt debitis ipsam omnis ullam nesciunt, recusandae eius quisquam quis perspiciatis aut quae fuga? Sit.
+    <Button primary hoverAnimation>Subscribe</Button>
+    </p>
     <p class="slogon right-slogon reveal reveal-from-right">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, aut cum. Amet ut dignissimos optio incidunt debitis ipsam omnis ullam nesciunt, recusandae eius quisquam quis perspiciatis aut quae fuga? Sit.</p>
     <Carousel />
   </section>
@@ -19,6 +22,8 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+
+    --primary-color: #b90808;
   }
 
   .carousel {
